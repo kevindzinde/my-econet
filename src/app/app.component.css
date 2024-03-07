@@ -1,0 +1,16 @@
+.container {
+    margin-top: 50px;
+}
+
+.queue-info {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.queue-info h1 {
+    font-size: 3rem;
+}
+
+.queue-info p {
+    font-size: 1.5rem;
+}
