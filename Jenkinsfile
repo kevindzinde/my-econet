@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build --pull --rm -f "Dockerfile" -t myeconet:latest "'
-                
+                sh 'echo "Building"'
+               
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "hie"'
+                 sh 'echo "Testing"'
             }
-
+        }
     }
 }
