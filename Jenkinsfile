@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools{
         nodejs '21.7.0'
+        docker 'latest'
     }
 
     stages {
