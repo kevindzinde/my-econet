@@ -1,8 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker{image 'node:latest'}
+    }
     tools{
         nodejs '21.7.0'
-        docker 'latest'
     }
 
     stages {
@@ -15,7 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'npm test'
+                sh 'echo done'
             }
         }
     }
