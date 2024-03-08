@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+                sh 'docker build --pull --rm -f "Dockerfile" -t myeconet:latest "."'
             }
         }
         stage('Test') {
