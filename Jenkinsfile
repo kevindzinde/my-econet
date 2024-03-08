@@ -4,16 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 scripts{
-                    sh 'docker build --pull --rm -f "Dockerfile" -t myeconet:latest "."'
-                }
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
         stage('Test') {
             steps {
-                scripts{
-                    sh ''
-                }
+                sh 'npm test'
             }
         }
     }
