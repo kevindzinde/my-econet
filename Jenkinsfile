@@ -1,6 +1,11 @@
 pipeline {
-    agent {
-        docker{image 'node:latest'}
+  agent { 
+        node {
+            label 'docker-agent-alpine'
+            }
+      }
+       triggers {
+        pollSCM 'H/5 * * * *'
     }
     tools{
         nodejs '21.7.0'
@@ -12,7 +17,8 @@ pipeline {
                 sh 'npm version'
                 sh 'npm install'
                 sh 'npm run build'
-                
+                sh 'docker'
+
             }
         }
         stage('Test') {
